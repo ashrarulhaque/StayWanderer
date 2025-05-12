@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 # StayWanderer 🧭
-
 A full-stack travel experience platform built with **Node.js**, **Express**, **MongoDB**, **EJS**, and modern front-end tools like **Bootstrap 5**, **JavaScript**, and **CSS**. It enables users to discover, host, and book travel stays and experiences, offering secure authentication and robust image handling via Cloudinary.
 
 ## 🌐 Live Demo
