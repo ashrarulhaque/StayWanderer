@@ -126,7 +126,3 @@ This project is licensed under the MIT License.
 Email:  ashrarulhaque0812@gmail.com  
 GitHub: [@ashrarulhaque](https://github.com/ashrarulhaque)  
 LinkedIn: [Ashrarul Haque](www.linkedin.com/in/ashrarul)
-=======
-# StayWanderer
-Full Stack Web Project
->>>>>>> a0fa6d70c536d20e845bdaa1b544095d53ffc409
