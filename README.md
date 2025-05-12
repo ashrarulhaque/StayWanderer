@@ -103,7 +103,7 @@ StayWanderer/
 
 - Deep understanding of full-stack architecture using MVC.
 - Working with secure authentication and session handling.
-- Integration of third-party services (Cloudinary, MongoDB Atlas).
+- Integration of third-party services (Cloudinary, MongoDB Atlas, Google Map JS API, InstaMojo Payment Gateway).
 - Clean routing, modular code, and error-first async handling.
 
 ---
