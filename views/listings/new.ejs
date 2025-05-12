@@ -1,0 +1,67 @@
+<% layout('/layouts/boilerplate') -%>
+<body>
+    <div class="container mt-3 mx-auto">
+        <h2 class="text-center mb-4">List Your Hotel</h2>
+        <form method="post" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data">
+            <!-- Hotel Title -->
+            <div class="mb-3">
+                <label for="hotelTitle" class="form-label">Hotel Title</label>
+                <input type="text" name="listing[title]" class="form-control" id="hotelTitle" placeholder="Enter hotel name" minlength="5" maxlength="100" required>
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Title must 5 to 100 characters.</div>
+            </div>
+    
+            <!-- Hotel Description -->
+            <div class="mb-3">
+                <label for="hotelDescription" class="form-label">Description</label>
+                <textarea class="form-control" name="listing[description]" id="hotelDescription" rows="3" placeholder="Write a short description" minlength="10" maxlength="1000" required></textarea>
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Description must 10 to 1000 characters.</div>
+            </div>
+    
+            <!-- Location -->
+            <div class="mb-3">
+                <label for="hotelLocation" class="form-label">Location</label>
+                <input type="text" name="listing[location]" class="form-control" id="hotelLocation" placeholder="Enter city or area" minlength="2" maxlength="75" required>
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Location must 2 to 75 characters.</div>
+            </div>
+            
+            <!-- Country Selection -->
+            <div class="mb-3">
+                <label for="hotelCountry" class="form-label">Country</label>
+                <select class="form-select" name="listing[country]" id="hotelCountry" required>
+                    <option value="" selected disabled>Select Country</option>
+                    <option value="USA">United States</option>
+                    <option value="UK">United Kingdom</option>
+                    <option value="India">India</option>
+                    <option value="France">France</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Other">Other</option>
+                </select>
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please provide a valid country.</div>
+            </div>
+    
+            <!-- Image URL -->
+            <div class="mb-3">
+                <label for="hotelImage" class="form-label">Image URL</label>
+                <input type="file" name="listing[image]" class="form-control" id="imageUrl" placeholder="Upload an Image" accept="image/*">
+            </div>
+    
+            <!-- Price -->
+            <div class="mb-3">
+                <label for="hotelPrice" class="form-label">Price per Night (&#8377;)</label>
+                <input type="number" name="listing[price]" class="form-control" id="hotelPrice" placeholder="Enter price" required>
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please provide a valid price.</div>
+            </div>
+            
+            <!-- Submit Button -->
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Submit Listing</button>
+            </div>
+        </form>
+    </div>
+</body>

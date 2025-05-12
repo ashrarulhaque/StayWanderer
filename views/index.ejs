@@ -1,0 +1,159 @@
+<% layout('/layouts/boilerplate') -%>
+<!-- Hero Carousel Section (Autoplay with Fade) -->
+<div
+  id="heroCarousel"
+  class="carousel slide carousel-fade"
+  data-bs-ride="carousel"
+  data-bs-interval="2000"
+>
+  <div class="carousel-inner">
+    <!-- Slide 1 -->
+    <div class="carousel-item active">
+      <img
+        src="https://images.unsplash.com/photo-1526786220381-1d21eedf92bf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        class="d-block w-100"
+        id="hero-image"
+        alt="Luxury Hotel"
+      />
+      <div
+        class="carousel-caption d-md-block bg-dark bg-opacity-50 rounded p-4"
+      >
+        <h1 class="text-white">Discover Luxury Hotels</h1>
+        <p class="text-light">Book your dream stay with StayWanderer</p>
+        <a href="/listings" class="btn btn-secondary">Explore Now</a>
+      </div>
+    </div>
+    <!-- Slide 2 -->
+    <div class="carousel-item">
+      <img
+        src="https://images.unsplash.com/photo-1702395663953-2a93da78f9bd?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        class="d-block w-100"
+        id="hero-image"
+        alt="Beach Resort"
+      />
+      <div
+        class="carousel-caption d-md-block bg-dark bg-opacity-50 rounded p-4"
+      >
+        <h1 class="text-white">Beachside Bliss</h1>
+        <p class="text-light">Resorts by the sea, just a click away</p>
+        <a href="/listings" class="btn btn-secondary">Find Stays</a>
+      </div>
+    </div>
+    <!-- Slide 3 -->
+    <div class="carousel-item">
+      <img
+        src="https://images.unsplash.com/photo-1614703501456-c3b535e3fad0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        class="d-block w-100"
+        id="hero-image"
+        alt="Mountain Hotel"
+      />
+      <div
+        class="carousel-caption d-md-block bg-dark bg-opacity-50 rounded p-4"
+      >
+        <h1 class="text-white">Escape to the Mountains</h1>
+        <p class="text-light">Stay cozy and explore nature</p>
+        <a href="/listings" class="btn btn-secondary">Browse Lodges</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Main Content -->
+<main class="py-5">
+  <div class="container">
+    <h2 class="text-center section-title">Top Picks For You</h2>
+    <div class="row g-4">
+      <% for (listInfo of randomListing) { %>
+      <div class="col-md-4">
+        <a href="/listings/show/<%= listInfo._id %>">
+          <div class="card hotel-card">
+            <img
+              src="<%= listInfo.image.url %>"
+              class="card-img-top"
+              alt="Hotel Image"
+              style="height: 40vh; background-size: cover"
+            />
+            <div class="card-body">
+              <h5 class="card-title"><%= listInfo.title %></h5>
+              <p class="card-text"><%= listInfo.description %></p>
+              <p class="text-muted">
+                &#8377;<%=listInfo.price.toLocaleString("en-IN")%>
+              </p>
+              <a
+                href="/listings/show/<%= listInfo._id %>"
+                class="btn btn-primary" id="index-btn"
+                >Book Now
+              </a>
+            </div>
+          </div>
+        </a>
+      </div>
+      <% } %>
+    </div>
+  </div>
+</main>
+<!-- Why Choose Us Section -->
+<section class="py-5" style="background-color: #f8f9fa">
+  <div class="container">
+    <h2 class="text-center section-title">Why Choose StayWanderer?</h2>
+    <div class="row g-4">
+      <!-- Point 1 -->
+      <div class="col-md-4">
+        <div
+          class="feature-card p-4 rounded shadow-sm h-100"
+          data-bs-toggle="collapse"
+          data-bs-target="#feature1"
+        >
+          <h5 class="text-primary">Curated Listings</h5>
+          <p class="text-muted">
+            Every hotel is handpicked for quality and location.
+          </p>
+          <div class="collapse feature-detail mt-2" id="feature1">
+            <p>
+              We partner with top-rated accommodations to ensure every stay
+              exceeds expectations — from boutique charm to 5-star comfort.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Point 2 -->
+      <div class="col-md-4">
+        <div
+          class="feature-card p-4 rounded shadow-sm h-100"
+          data-bs-toggle="collapse"
+          data-bs-target="#feature2"
+        >
+          <h5 class="text-primary">Best Price Guarantee</h5>
+          <p class="text-muted">We match or beat any price, anytime.</p>
+          <div class="collapse feature-detail mt-2" id="feature2">
+            <p>
+              Find a lower rate elsewhere? We'll refund the difference. Our
+              pricing engine ensures you always book at the best possible rate.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Point 3 -->
+      <div class="col-md-4">
+        <div
+          class="feature-card p-4 rounded shadow-sm h-100"
+          data-bs-toggle="collapse"
+          data-bs-target="#feature3"
+        >
+          <h5 class="text-primary">24/7 Support</h5>
+          <p class="text-muted">
+            Friendly travel experts available around the clock.
+          </p>
+          <div class="collapse feature-detail mt-2" id="feature3">
+            <p>
+              Whether you need help mid-trip or just have questions before
+              booking, our support team is here 24/7 via chat, phone, or email.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,34 @@
+<% layout('/layouts/boilerplate') -%>
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow-lg border-0">
+        <div class="card-header bg-success text-white text-center">
+          <h4 class="mb-0">💳 Secure Payment</h4>
+        </div>
+        <div class="card-body">
+          <form action="/listings/booking/<%= listInfo._id %>/payment/create" method="POST">
+            <div class="mb-3">
+              <label for="name" class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="name" name="name" value="<%= userInfo.username %>" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email Address</label>
+              <input type="email" class="form-control" id="email" name="email" value="<%= userInfo.email %>" required>
+            </div>
+            <div class="mb-3">
+              <label for="amount" class="form-label">Amount (INR)</label>
+              <input type="number" class="form-control" id="amount" name="amount" value="<%=listInfo.price%>" disabled>
+            </div>
+            <input class="form-control" id="token" name="token" value="<%= response.access_token %>" hidden>
+            <div class="d-grid">
+              <button type="submit" class="btn btn-success">
+                Proceed to Pay ₹ <%=listInfo.price.toLocaleString("en-IN")%>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

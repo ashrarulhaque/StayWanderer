@@ -1,0 +1,410 @@
+a {
+    color: #fff; 
+}
+:root {
+    --primary-color: #007f82;
+    --secondary-color: #0000b3;
+    --tertiary-color: #FF5600;
+}
+
+/* navbar */
+.navbar-brand img {
+    width: 8rem;
+    height: 6rem;
+}
+
+.modal-header {
+    background-color: var(--primary-color) !important;
+}
+/* navbar */
+/* Search & its modal */
+.search-bar {
+    max-width: 400px;
+    width: 100%;
+}
+
+.search-bar input {
+    border-radius: 20px 0 0 20px;
+    padding: 8px;
+}
+
+.search-bar button {
+    border-radius: 0 20px 20px 0;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+}
+
+.search-bar button:hover {
+    background: var(--secondary-color);
+    color: white;
+}
+
+/* Search & its modal */
+
+@media (max-width: 576px) {
+    .navbar-brand img {
+        width: 6rem;
+        height: 4.5rem;
+    }
+    #goToBottom, #backToTop {
+        transform: scale(0.75);
+    }
+}
+
+@media (min-width: 576px) {
+    #hamburger-btn {
+        transform: scale(1.2);
+    }
+}
+
+.card {
+    border: none;
+    margin-bottom: 2rem;
+}
+.card-img-top {
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+.btn-primary {
+  display: inline-block;
+  background-color: #007f82;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #0000b3;
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+  outline: none;
+}
+
+.btn-primary i {
+  margin-right: 8px;
+}
+/* Host Button Styling */
+.btn-link {
+  display: inline-block;
+  background-color: #007f82;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.btn-link:hover,
+.btn-link:focus {
+  background-color: #0000b3;
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+  outline: none;
+}
+
+.btn-link i {
+  margin-right: 8px;
+}
+#index-btn {
+    color: #fff;
+}
+
+/* Cards */
+.card a {
+    text-decoration: none;
+    color: inherit;
+}
+.card-text {
+    height: 6rem;
+    overflow: clip;
+    line-height: 1.5rem;
+}
+.card-title {
+    height: 3rem;
+    line-height: 1.5rem;
+}
+.descriptionbox {
+    height: auto;
+    overflow: auto;
+    text-align: justify;
+}
+.card-img-top:hover {
+    opacity: 0.8;
+}
+
+.page-link {
+    background-color: var(--tertiary-color);
+    color: white;
+}
+.page-link:focus {
+    background-color: var(--primary-color);
+    color: white;
+}
+/* General Footer Styling */
+.footer {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 50px 0;
+    font-family: Arial, sans-serif;
+    position: relative;
+    margin-top: 2rem;
+}
+
+.container-fluid {
+    width: 90%;
+    margin: auto;
+}
+
+.footer-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: 500;
+    color: var(--secondary-color);
+}
+
+.footer-col p, .footer-col ul {
+    font-size: 14px;
+    color: #fff;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin: 8px 0;
+}
+
+.footer-col ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+    color: var(--secondary-color);
+}
+
+/* Newsletter Section */
+.footer-col form {
+    display: flex;
+    gap: 10px;
+}
+
+.footer-col input {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+.footer-col button {
+    background: var(--tertiary-color);
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.footer-col button:hover {
+    background: var(--secondary-color);
+}
+
+/* Social Media Icons */
+.social-links {
+    margin-top: 1rem;
+}
+.social-links a {
+    color: #fff;
+    font-size: 18px;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--secondary-color);
+}
+
+/* Back to Top Button */
+#backToTop {
+    position: fixed;
+    bottom: calc(50vh + 1.75rem);;
+    right: 5px;
+    background: transparent;
+    color: var(--tertiary-color);
+    border: none;
+    padding: 10px;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 25px;
+    display: none;
+    transition: 0.3s;
+}
+
+#goToBottom {
+    position: fixed;
+    bottom: calc(50vh - 1.75rem);
+    right: 5px;
+    background: transparent;
+    color: var(--tertiary-color);
+    border: none;
+    padding: 10px;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 25px;
+    display: none;
+    transition: 0.3s;
+}
+  
+
+#backToTop:hover, #goToBottom:hover {
+    background: var(--primary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-row {
+        flex-direction: column;
+    }
+    .nav-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 800px) {
+    .card-title {
+        height: 4.5rem;
+        line-height: 1.5rem;
+    }
+}
+
+#hotelImage {
+    width: 40rem;
+    height: 30rem;
+    border-radius: 25px !important;
+}
+
+.badge {
+    background-color: var(--tertiary-color) !important;
+}
+
+.profile-container {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pcard {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(-45deg, var(--primary-color) 0%, var(--tertiary-color) 100% );
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+  
+.pcard:hover {
+    transform: rotate(-5deg) scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+  
+.pcard__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #fff;
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+  
+.pcard:hover .pcard__content {
+    transform: translate(-50%, -50%) rotate(0deg);
+    opacity: 1;
+}
+  
+.pcard__title {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+    font-weight: 700;
+}
+  
+.pcard__description {
+    margin: 10px 0 0;
+    font-size: 14px;
+    color: #777;
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .pcard {
+        transform: scale(0.8);
+    }
+    .pcard:hover {
+        transform: rotate(-5deg) scale(1.05);
+    }
+}
+@media (max-width: 576px) {
+    .pcard:hover {
+        transform: rotate(-5deg) scale(0.8);
+    }
+}
+
+/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
+gmp-map {
+  height: 40vh;
+  width: 75vw;
+  border: 4px groove var(--primary-color);
+}
+
+.place-picker-container {
+  padding: 20px;
+}

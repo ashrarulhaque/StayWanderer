@@ -1,0 +1,117 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+  <div class="container-fluid d-flex justify-content-between">
+    <!-- Logo -->
+    <a class="navbar-brand" href="/"><img src="/images/new_logo.png" alt="StayWander"></a>
+    <button class="btn btn-primary d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasResponsive" aria-controls="offcanvasResponsive" id="hamburger-btn">
+      <i class="bi bi-list"></i>
+    </button>
+    <div class="offcanvas-md offcanvas-end" tabindex="-1" id="offcanvasResponsive" aria-labelledby="offcanvasResponsiveLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasResponsiveLabel">Stay, Wander, Repeat</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav gap-3">
+          <li class="nav-item">
+            <a class="nav-link btn-link" href="/listings/new">
+              <i class="fa-solid fa-circle-plus"></i> Host an Experience
+            </a>
+          </li>
+          <% if (!currentUser) { %>
+          <li class="nav-item">
+            <a class="nav-link btn-link" href="/user/login">
+              <i class="fas fa-sign-in-alt me-1"></i> Login
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn-link" href="/user/signup">
+              <i class="fas fa-user-plus me-1"></i> Sign Up
+            </a>
+          </li>
+          <% } %>
+          <% if (currentUser) { %>
+            <li class="nav-item">
+                <a class="nav-link btn-link" href="/user/profile">
+                  <i class="bi bi-person-circle"></i> View Profile
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link btn-link" href="/user/logout">
+                    <i class="bi bi-box-arrow-left"></i> Logout
+                </a>
+            </li>
+          <% } %>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- Animated Search Button -->
+  <button type="button" class="btn search-float-btn" data-bs-toggle="modal" data-bs-target="#searchModal">
+    <i class="bi bi-search"></i>
+  </button>
+  <!-- Floating Explore Button -->
+  <a href="/listings">
+    <button type="button" class="btn explore-float-btn">
+      <i class="fas fa-compass"></i>
+    </button>
+  </a>
+
+</nav>
+
+<!-- Search Modal -->
+<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header text-white">
+        <h5 class="modal-title" id="searchModalLabel">Search Hotels</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form method="POST" action="/listings/search" id="searchForm">
+          <div class="card p-3 shadow-sm">
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Search..." name="query">
+              <button class="btn btn-primary" type="submit"><i class="bi bi-search"></i></button>
+            </div>
+
+            <div class="mb-3">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="true" id="searchByName" name="filter[location]">
+                <label class="form-check-label" for="searchByName">Search by Location</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="true" id="searchByCountry" name="filter[country]">
+                <label class="form-check-label" for="searchByCountry">Search by Country</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="true" id="searchByPrice" name="filter[price]">
+                <label class="form-check-label" for="searchByPrice">Search by Price Range</label>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <input type="number" class="form-control" placeholder="Min Price" name="minPrice">
+                </div>
+                <div class="col">
+                  <input type="number" class="form-control" placeholder="Max Price" name="maxPrice">
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <label for="sortBy">Sort By price:</label>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="sortby" id="inlineRadio1" value="1" checked>
+                <label class="form-check-label" for="inlineRadio1">Low to High</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="sortby" id="inlineRadio2" value="-1">
+                <label class="form-check-label" for="inlineRadio2">High to Low</label>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

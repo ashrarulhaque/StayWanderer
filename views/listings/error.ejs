@@ -1,0 +1,10 @@
+<% layout('/layouts/boilerplate') -%>
+<body>
+    <div class="bg-light d-flex align-items-center justify-content-center vh-100">
+        <div class="text-center border border-danger rounded p-5 bg-white shadow-sm">
+            <h1 class="display-1 text-danger"><%= err.statusCode || 500 %></h1>
+            <p class="fs-4"><%= err.message || "Something went wrong!" %></p>
+            <a href="/listings" class="btn btn-outline-danger mt-3">Go Back Home</a>
+        </div>
+    </div>
+</body>

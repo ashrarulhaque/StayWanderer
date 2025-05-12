@@ -1,0 +1,77 @@
+<% layout('/layouts/boilerplate') -%>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Edit Hotel Details</h2>
+    
+        <form method="post" action="/listings/<%=listInfo._id%>?_method=PUT" enctype="multipart/form-data" novalidate class="needs-validation">
+            <!-- Hotel Title -->
+            <div class="mb-3">
+                <label for="hotelTitle" class="form-label">Hotel Title</label>
+                <input type="text" name="listing[title]" class="form-control" id="hotelTitle" value="<%= listInfo.title %>" required>
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please provide a valid title.</div>
+            </div>
+    
+            <!-- Hotel Description -->
+            <div class="mb-3">
+                <label for="hotelDescription" class="form-label">Description</label>
+                <textarea class="form-control" name="listing[description]" id="hotelDescription" rows="3" required><%= listInfo.description %></textarea>
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please provide a valid description.</div>
+            </div>
+    
+            <!-- Location -->
+            <div class="mb-3">
+                <label for="hotelLocation" class="form-label">Location</label>
+                <input type="text" name="listing[location]" class="form-control" id="hotelLocation" value="<%= listInfo.location %>" required>
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please provide a valid location.</div>
+            </div>
+    
+            <!-- Country Selection -->
+            <div class="mb-3">
+                <label for="hotelCountry" class="form-label">Country</label>
+                <select class="form-select" name="listing[country]" id="hotelCountry" required>
+                    <option value="<%= listInfo.country %>" selected><%= listInfo.country %></option>
+                    <option value="UK">United Kingdom</option>
+                    <option value="India">India</option>
+                    <option value="France">France</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Other">Other</option>
+                </select>
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please provide a valid country.</div>
+            </div>
+            <!-- Image Preview (from backend) -->
+            <div class="mb-3">
+                <label class="form-label">Current Image</label>
+                <div>
+                    <img id="backendImagePreview" src=<%= listInfo.image.url %> alt="Current Image" class="img-thumbnail" style="max-height: 200px;">
+                </div>
+            </div>
+            
+            <!-- Image URL -->
+            <div class="mb-3">
+                <label for="hotelImage" class="form-label">Image URL</label>
+                <input type="file" name="listing[image]" class="form-control" id="imageUrl" accept="image/*">
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please upload an image.</div>
+            </div>
+    
+            <!-- Price -->
+            <div class="mb-3">
+                <label for="hotelPrice" class="form-label">Price per Night (&#8377;)</label>
+                <input type="number" name="listing[price]" class="form-control" id="hotelPrice" value="<%= listInfo.price %>" required>
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please provide a valid price.</div>
+            </div>
+    
+            <!-- Submit Button -->
+            <div class="text-center">
+                <button type="submit" class="btn btn-success">Update Hotel</button>
+                <a href="/listings/show/<%=listInfo._id%>" class="btn btn-secondary">Cancel</a>
+            </div>
+        </form>
+    </div>
+</body>

@@ -1,0 +1,51 @@
+<% layout('/layouts/boilerplate') -%>
+    <div class="profile-container">
+        <div class="pcard">
+            <img src="<%= userInfo.profileImg.url %>" id="profileImagePreview"
+                  class="rounded-circle border border-secondary"
+                  alt="Profile"
+                  style="width: 20rem; height: 20rem; object-fit: cover;">
+            <div class="pcard__content">
+                <!-- Profile Picture with Edit Button -->
+                <div class="position-relative d-inline-block mb-3">
+
+                    <!-- Profile Image -->
+                    <img src="<%= currentUser.profileImg.url %>" id="profileImagePreview"
+                        class="rounded-circle border border-secondary"
+                        alt="Profile"
+                        style="width: 6rem; height: 6rem; object-fit: cover;">
+    
+                    <!-- Edit Button (pencil icon) -->
+                    <button type="button"
+                            class="btn btn-sm btn-secondary rounded-circle position-absolute"
+                            style="top: 0; right: 0;"
+                            onclick="document.getElementById('profileImageInput').click();">
+                    <i class="bi bi-pencil-fill text-white"></i>
+                    </button>
+    
+                    <form action="/user/update" method="post" enctype="multipart/form-data"> 
+                    <!-- Hidden File Input -->
+                    <input type="file" class="form-control d-none" id="profileImageInput" name="profileImg" accept="image/*">
+                    <button type="submit" class="btn btn-secondary mt-2 d-none" id="UpdateDP">Upload</button>
+                    </form>
+                </div>
+                <p class="pcard__title">Your Profile</p>
+                <p class="pcard__description">
+                    <b>Username: </b><%= userInfo.username %> <br> <hr>
+                    <b>Email: </b><%= userInfo.email %>
+                </p>
+            </div>
+        </div>      
+    </div>
+<script>
+    document.getElementById('profileImageInput').addEventListener('change', function (event) {
+        const file = event.target.files[0];
+          if (file) {
+            const preview = document.getElementById('profileImagePreview');
+            preview.src = URL.createObjectURL(file);
+            const uploadBtn = document.getElementById('UpdateDP');
+            uploadBtn.classList.replace('d-none', 'd-inline')
+        }
+    });
+</script>
+
