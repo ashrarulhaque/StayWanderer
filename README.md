@@ -16,8 +16,61 @@ A full-stack travel experience platform built with **Node.js**, **Express**, **M
 - 🧾 **Form Validation**: Server-side validation with Joi to ensure data integrity.
 - 🔒 **Secure Sessions**: User sessions stored with MongoDB using `connect-mongo`.
 - ⚙️ **RESTful API**: Built with Express and structured routes.
+- 🌐 **Browse and search** listings
+- 📝 **Review System** with ratings and author access control
+- 🛡️ **Authorization**: Edit/Delete protected by ownership
+- 📬 **Flash Messages** for feedback on actions
 - 🎨 **Responsive UI**: Designed using Bootstrap 5 and custom SCSS for modern, responsive layouts.
 - ⚡ **Real-Time Form Feedback** with JavaScript and client-side interactivity.
+
+---
+## 🧠 Custom Middleware
+
+### 🔐 Authentication Middleware
+
+* `isLoggedIn`: Restricts access to routes unless user is logged in
+* `isOwner`: Ensures only the owner of a listing can edit/delete it
+* `isAuthor`: Ensures only the author of a review can delete it
+
+### 🛠️ Validation Middleware
+
+* Custom **Joi** schema validations for listing and reviews
+* Throws a custom `ExpressError` if validation fails
+
+---
+
+## 🧩 MongoDB Models & Relationships
+
+### 📌 Listing Model
+
+* References the `User` model via `owner`
+* Contains an array of `Review` references
+
+### 👤 User Model
+
+* Stores user credentials via `passport-local-mongoose`
+
+### ✍️ Review Model
+
+* References the `User` who submitted it (author)
+* Linked to the corresponding `Listing`
+
+### 🔄 Relational Logic
+
+* A **listing cannot be created** without logging in
+* Only the **owner** of a listing can **edit or delete** it
+* Only the **author** of a review can **delete** it
+
+Authorization and relationships are strictly enforced throughout the application.
+
+---
+
+## ⚠️ Error Handling
+
+* Custom `ExpressError` class for throwing meaningful errors
+* `wrapAsync` utility function to catch async errors and pass them to the error handler
+* Global error handler middleware to manage all thrown errors in one place
+
 
 ---
 
@@ -39,8 +92,13 @@ A full-stack travel experience platform built with **Node.js**, **Express**, **M
 
 ### Dev Tools:
 - **Nodemon**
-- **Dotenv**
 - **EJS-Mate (layouts & partials)**
+- **Passport.js (Authentication)**
+- **Cloudinary + Multer (Image Uploads)**
+- **connect-mongo (Session store)**
+- **Joi (Validation)**
+- **dotenv (Environment variables)**
+- **Method-override**
 
 ---
 
@@ -127,3 +185,8 @@ This project is licensed under the MIT License.
 Email:  ashrarulhaque0812@gmail.com  
 GitHub: [@ashrarulhaque](https://github.com/ashrarulhaque)  
 LinkedIn: [Ashrarul Haque](www.linkedin.com/in/ashrarul)
+
+---
+
+## 📸 Screenshots
+
