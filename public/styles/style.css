@@ -67,9 +67,9 @@ a {
     width: 100% !important;
     object-fit: cover !important;
 }
-.btn-primary {
+.btn-primary, #edit-btn {
   display: inline-block;
-  background-color: #007f82;
+  background-color: #FF5600;
   color: #fff;
   padding: 10px 18px;
   border-radius: 8px;
@@ -81,7 +81,7 @@ a {
 
 .btn-primary:hover,
 .btn-primary:focus {
-  background-color: #0000b3;
+  background-color: #007f82;
   color: #fff;
   transform: scale(1.05);
   box-shadow: 0 5px 12px rgba(0,0,0,0.2);
@@ -92,7 +92,7 @@ a {
   margin-right: 8px;
 }
 /* Host Button Styling */
-.btn-link {
+.btn-link, #btn-a {
   display: inline-block;
   background-color: #007f82;
   color: #fff;
